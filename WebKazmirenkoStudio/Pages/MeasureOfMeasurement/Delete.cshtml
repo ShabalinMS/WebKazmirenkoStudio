@@ -1,0 +1,28 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.MeasureOfMeasurement.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить запись?</h3>
+<div>
+    <h4>Мера измерения</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MeasureOfMeasurement.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MeasureOfMeasurement.Caption)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MeasureOfMeasurement.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад</a>
+    </form>
+</div>

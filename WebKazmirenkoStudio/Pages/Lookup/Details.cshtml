@@ -1,0 +1,28 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Lookup.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h4>Справочник</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LookupModel.Code)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LookupModel.Code)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LookupModel.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LookupModel.Caption)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.LookupModel?.Id">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

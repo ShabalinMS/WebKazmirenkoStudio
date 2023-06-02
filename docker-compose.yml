@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  webkazmirenkostudio:
+    image: ${DOCKER_REGISTRY-}webkazmirenkostudio
+    build:
+      context: .
+      dockerfile: WebKazmirenkoStudio\Dockerfile
+     

@@ -1,0 +1,57 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Contact.EditModel
+@using WebKazmirenkoStudio.Properties.Resources
+@{
+    ViewData["Title"] = ResourcesString.StatusOrder;
+    ViewData["SaveButton"] = ElementPageResource.SaveButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+    ViewData["EditCaption"] = ElementPageResource.EditCaption;
+}
+
+<h1>@ViewData["EditCaption"]</h1>
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ContactModel.FIO" class="control-label"></label>
+                <input asp-for="ContactModel.FIO" class="form-control" />
+                <span asp-validation-for="ContactModel.FIO" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ContactModel.Name" class="control-label"></label>
+                <input asp-for="ContactModel.Name" class="form-control" />
+                <span asp-validation-for="ContactModel.Name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ContactModel.Surname" class="control-label"></label>
+                <input asp-for="ContactModel.Surname" class="form-control" />
+                <span asp-validation-for="ContactModel.Surname" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ContactModel.MiddleName" class="control-label"></label>
+                <input asp-for="ContactModel.MiddleName" class="form-control" />
+                <span asp-validation-for="ContactModel.MiddleName" class="text-danger"></span>
+            </div>
+            <br />
+            <input type="hidden" asp-for="ContactModel.Id" />
+            <div class="form-group">
+                <input type="submit" value="@ViewData["SaveButton"]" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="./Index">@ViewData["BackCaption"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

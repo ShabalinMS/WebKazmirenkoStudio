@@ -1,0 +1,40 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Shop.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить</h1>
+
+<h3>Вы действительно хотите удалить запись?</h3>
+<div>
+    <h4>Магазин</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopModel.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopModel.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ShopModel.Address)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopModel.Address)
+        </dd>
+        <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.ShopModel.LinkSource)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ShopModel.LinkSource)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ShopModel.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад</a>
+    </form>
+</div>

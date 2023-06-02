@@ -1,0 +1,36 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.MeasureOfMeasurement.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Изменить запись</h1>
+
+<h4>Мера измерения</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MeasureOfMeasurement.Caption" class="control-label"></label>
+                <input asp-for="MeasureOfMeasurement.Caption" class="form-control" />
+                <span asp-validation-for="MeasureOfMeasurement.Caption" class="text-danger"></span>
+            </div>
+            <br />
+            <input type="hidden" asp-for="MeasureOfMeasurement.Id" />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="./Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

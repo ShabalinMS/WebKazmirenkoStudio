@@ -1,0 +1,57 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.MaterialConsumptionPlan.CreateModel
+@using WebKazmirenkoStudio.Properties.Resources
+
+@{
+    ViewData["Title"] = ResourcesString.MaterialConsumptionPlan;
+    ViewData["NewRecordCaption"] = ElementPageResource.NewRecordCaption;
+    ViewData["CreateRecordButton"] = ElementPageResource.CreateRecordButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+}
+
+<h1>@ViewData["NewRecordCaption"]</h1>
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MaterialConsumptionPlanModel.Warehouse" class="control-label"></label>
+                    @Html.DropDownListFor(
+                        model => model.rawMaterialCaption.SelectedItem,
+                        Model.rawMaterialCaption.Collection
+                    )
+                <span asp-validation-for="MaterialConsumptionPlanModel.Warehouse.RawMaterialCaption.Id" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="MaterialConsumptionPlanModel.Product" class="control-label"></label>
+                    @Html.DropDownListFor(
+                        model => model.product.SelectedItem,
+                        Model.product.Collection
+                    )
+                <span asp-validation-for="MaterialConsumptionPlanModel.Product.Id" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="MaterialConsumptionPlanModel.Quantity" class="control-label"></label>
+                <input asp-for="MaterialConsumptionPlanModel.Quantity" class="form-control" />
+                <span asp-validation-for="MaterialConsumptionPlanModel.Quantity" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="@ViewData["CreateRecordButton"]" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Index">@ViewData["BackCaption"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

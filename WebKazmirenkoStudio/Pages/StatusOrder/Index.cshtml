@@ -1,0 +1,40 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.StatusOrder.IndexModel
+@using WebKazmirenkoStudio.Properties.Resources
+@{
+    ViewData["Title"] = ResourcesString.StatusOrder;
+    ViewData["CreateNewRecord"] = ElementPageResource.CreateNewRecord;
+    ViewData["EditCaption"] = ElementPageResource.EditCaption;
+    ViewData["DetailsCaption"] = ElementPageResource.DetailsCaption;
+    ViewData["DeletePage"] = ElementPageResource.DeletePage;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-page="Create">@ViewData["CreateNewRecord"]</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusOrderModel[0].Caption)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StatusOrderModel) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Caption)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">@ViewData["EditCaption"]</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">@ViewData["DetailsCaption"]</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">@ViewData["DeletePage"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

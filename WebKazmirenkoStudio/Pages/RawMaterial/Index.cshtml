@@ -1,0 +1,66 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.RawMaterial.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Сырье</h1>
+
+<p>
+    <a asp-page="Create">Создать запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial[0].RawMaterialCaption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial[0].Purchase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial[0].MeasureOfMeasurement)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RawMaterial[0].LinkSource)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.RawMaterial) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RawMaterialCaption.Caption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Purchase.Caption)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MeasureOfMeasurement.Caption)
+                </td>
+                <td>
+                    <a href='@Html.DisplayFor(modelItem => item.LinkSource)'>Ссылка на источник</a>
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Открыть</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

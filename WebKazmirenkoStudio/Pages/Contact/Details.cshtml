@@ -1,0 +1,46 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Contact.DetailsModel
+@using WebKazmirenkoStudio.Properties.Resources
+@{
+    ViewData["Title"] = ResourcesString.Contact;
+    ViewData["DetailsLableCaption"] = ElementPageResource.DetailsLableCaption;
+    ViewData["EditButton"] = ElementPageResource.EditButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+}
+
+<h1>@ViewData["DetailsLableCaption"]</h1>
+
+<div>
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactModel.FIO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactModel.FIO)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactModel.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactModel.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactModel.Surname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactModel.Surname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ContactModel.MiddleName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ContactModel.MiddleName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ContactModel?.Id">@ViewData["EditButton"]</a> |
+    <a asp-page="./Index">@ViewData["BackCaption"]</a>
+</div>

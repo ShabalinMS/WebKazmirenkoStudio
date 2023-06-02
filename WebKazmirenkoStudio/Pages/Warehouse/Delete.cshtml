@@ -1,0 +1,28 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Warehouse.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удаление записи</h1>
+
+<h3>Вы действительно хотите удалить эту запись</h3>
+<div>
+    <h4>Склад</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WarehouseModel.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WarehouseModel.Quantity)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="WarehouseModel.Id" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-page="./Index">Назад</a>
+    </form>
+</div>

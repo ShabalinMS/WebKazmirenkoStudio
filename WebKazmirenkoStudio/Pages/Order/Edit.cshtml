@@ -1,0 +1,76 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Order.EditModel
+@using WebKazmirenkoStudio.Properties.Resources
+
+@{
+    ViewData["Title"] = ResourcesString.Order;
+    ViewData["SaveButton"] = ElementPageResource.SaveButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+    ViewData["EditCaption"] = ElementPageResource.EditCaption;
+}
+
+<h1>@ViewData["EditCaption"]</h1>
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="OrderModel.StatusOrder" class="control-label"></label>
+                @Html.DropDownListFor(
+                        model => model.statusOrder.SelectedItem,
+                        Model.statusOrder.Collection
+                    )
+                <span asp-validation-for="OrderModel.StatusOrder.Id" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="OrderModel.Contact" class="control-label"></label>
+                @Html.DropDownListFor(
+                        model => model.contact.SelectedItem,
+                        Model.contact.Collection
+                    )
+                <span asp-validation-for="OrderModel.Contact.Id" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="OrderModel.MakeDate" class="control-label"></label>
+                <input asp-for="OrderModel.MakeDate" class="form-control" />
+                <span asp-validation-for="OrderModel.MakeDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="OrderModel.DeliveryDate" class="control-label"></label>
+                <input asp-for="OrderModel.DeliveryDate" class="form-control" />
+                <span asp-validation-for="OrderModel.DeliveryDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="OrderModel.ShippingСost" class="control-label"></label>
+                <input asp-for="OrderModel.ShippingСost" class="form-control" />
+                <span asp-validation-for="OrderModel.ShippingСost" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="OrderModel.RegistrationDate" class="control-label"></label>
+                <input asp-for="OrderModel.RegistrationDate" class="form-control" />
+                <span asp-validation-for="OrderModel.RegistrationDate" class="text-danger"></span>
+            </div>
+            <br />
+            <input type="hidden" asp-for="OrderModel.Id" />
+            <div class="form-group">
+                <input type="submit" value="@ViewData["SaveButton"]" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="./Index">@ViewData["BackCaption"]</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

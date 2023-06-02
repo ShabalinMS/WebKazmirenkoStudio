@@ -1,0 +1,41 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.MaterialConsumptionPlan.DetailsModel
+@using WebKazmirenkoStudio.Properties.Resources
+
+@{
+    ViewData["Title"] = ResourcesString.MaterialConsumptionPlan;
+    ViewData["DetailsLableCaption"] = ElementPageResource.DetailsLableCaption;
+    ViewData["EditButton"] = ElementPageResource.EditButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+}
+
+<h1>@ViewData["DetailsLableCaption"]</h1>
+
+<div>
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MaterialConsumptionPlanModel.Warehouse)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MaterialConsumptionPlanModel.Warehouse.RawMaterialCaption.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MaterialConsumptionPlanModel.Product)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MaterialConsumptionPlanModel.Product.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MaterialConsumptionPlanModel.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MaterialConsumptionPlanModel.Quantity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.MaterialConsumptionPlanModel?.Id">@ViewData["EditButton"]</a> |
+    <a asp-page="./Index">@ViewData["BackCaption"]</a>
+</div>

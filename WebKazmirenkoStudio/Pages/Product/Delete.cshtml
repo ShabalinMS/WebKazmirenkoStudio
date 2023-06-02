@@ -1,0 +1,39 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Product.DeleteModel
+@using WebKazmirenkoStudio.Properties.Resources
+
+@{
+    ViewData["Title"] = ResourcesString.ManufacturedProducts;
+    ViewData["AreYouWantDelete"] = ElementPageResource.AreYouWantDelete;
+    ViewData["DeleteRecordCaption"] = ElementPageResource.DeleteRecordCaption;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+    ViewData["DeletePage"] = ElementPageResource.DeletePage;
+}
+
+<h1>@ViewData["DeleteRecordCaption"]</h1>
+
+<h3>@ViewData["AreYouWantDelete"]</h3>
+<div>
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductModel.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductModel.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductModel.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductModel.Price)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ProductModel.Id" />
+        <input type="submit" value="@ViewData["DeletePage"]" class="btn btn-danger" /> |
+        <a asp-page="./Index">@ViewData["BackCaption"]</a>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Warehouse.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Детализация</h1>
+
+<div>
+    <h4>Склад</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WarehouseModel.RawMaterialCaption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WarehouseModel.RawMaterialCaption.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WarehouseModel.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WarehouseModel.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WarehouseModel.MeasureOfMeasurement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WarehouseModel.MeasureOfMeasurement.Caption)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WarehouseModel?.Id">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

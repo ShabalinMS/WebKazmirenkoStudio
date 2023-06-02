@@ -1,0 +1,53 @@
+﻿@page
+@using WebKazmirenkoStudio.Model;
+@model WebKazmirenkoStudio.Pages.RawMaterial.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h4>Сырье</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.RawMaterialCaption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.RawMaterialCaption.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Purchase.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Purchase.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Price)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.Quantity)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.Quantity)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.MeasureOfMeasurement)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.MeasureOfMeasurement)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterial.LinkSource)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterial.LinkSource)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.RawMaterial?.Id">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

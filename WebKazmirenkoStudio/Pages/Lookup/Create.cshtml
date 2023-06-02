@@ -1,0 +1,41 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Lookup.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Новая запись</h1>
+
+<h4>Справочник</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Lookup.Code" class="control-label"></label>
+                <input asp-for="Lookup.Code" class="form-control" />
+                <span asp-validation-for="Lookup.Code" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Lookup.Caption" class="control-label"></label>
+                <input asp-for="Lookup.Caption" class="form-control" />
+                <span asp-validation-for="Lookup.Caption" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

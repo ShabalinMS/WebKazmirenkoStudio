@@ -1,0 +1,28 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.StatusOrder.DetailsModel
+@using WebKazmirenkoStudio.Properties.Resources
+@{
+    ViewData["Title"] = ResourcesString.StatusOrder;
+    ViewData["DetailsLableCaption"] = ElementPageResource.DetailsLableCaption;
+    ViewData["EditButton"] = ElementPageResource.EditButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+}
+
+<h1>@ViewData["DetailsLableCaption"]</h1>
+
+<div>
+    <h4>@ViewData["Title"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.StatusOrderModel.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.StatusOrderModel.Caption)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.StatusOrderModel?.Id">@ViewData["EditButton"]</a> |
+    <a asp-page="./Index">@ViewData["BackCaption"]</a>
+</div>

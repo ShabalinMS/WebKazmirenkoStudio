@@ -1,0 +1,41 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Product.CreateModel
+@using WebKazmirenkoStudio.Properties.Resources
+@{
+    ViewData["Title"] = ResourcesString.ManufacturedProducts;
+    ViewData["NewRecordCaption"] = ElementPageResource.NewRecordCaption; 
+    ViewData["CreateRecordButton"] = ElementPageResource.CreateRecordButton; 
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+}
+
+<h1>@ViewData["NewRecordCaption"]</h1>
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProductModel.Caption" class="control-label"></label>
+                <input asp-for="ProductModel.Caption" class="form-control" />
+                <span asp-validation-for="ProductModel.Caption" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ProductModel.Price" class="control-label"></label>
+                <input asp-for="ProductModel.Price" class="form-control" />
+                <span asp-validation-for="ProductModel.Price" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="@ViewData["CreateRecordButton"]" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Index">@ViewData["BackCaption"]</a>
+</div>
+

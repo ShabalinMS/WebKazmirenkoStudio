@@ -1,0 +1,48 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Shop.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Магазины</h1>
+
+<p>
+    <a asp-page="Create">Создать новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopModel[0].Caption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopModel[0].Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShopModel[0].LinkSource)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.ShopModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a href='@Html.DisplayFor(modelItem => item.LinkSource)'>Ссылка на источник</a>
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Открыть</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

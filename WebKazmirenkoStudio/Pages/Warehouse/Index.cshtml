@@ -1,0 +1,48 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Warehouse.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Склад</h1>
+
+<p>
+    <a asp-page="Create">Создать новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WarehouseModel[0].RawMaterialCaption)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WarehouseModel[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WarehouseModel[0].MeasureOfMeasurement)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.WarehouseModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RawMaterialCaption.Caption)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MeasureOfMeasurement.Caption)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Детализация</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

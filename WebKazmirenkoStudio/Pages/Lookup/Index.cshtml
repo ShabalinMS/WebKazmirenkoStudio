@@ -1,0 +1,44 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Lookup.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Справочники</h1>
+
+<p>
+    <a asp-page="Create">Создать новую запись</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Lookup[0].Code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Lookup[0].Caption)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Lookup)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Caption)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Изменить</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Открыть</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Удалить</a> |
+                <a href="@item.Code/Index">Перейти</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

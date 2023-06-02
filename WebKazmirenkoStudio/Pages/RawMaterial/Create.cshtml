@@ -1,0 +1,72 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.RawMaterial.CreateModel
+
+@{
+    ViewBag.Title = "Закупка";
+}
+
+<h1>Новая запись</h1>
+
+<h4>Сырье</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label asp-for="RawMaterial.RawMaterialCaption.Caption" class="control-label"></label>
+                    @Html.DropDownListFor(
+                        model => model.rawMaterialCaption.SelectedItem,
+                        Model.rawMaterialCaption.Collection
+                    )
+                    <span asp-validation-for="RawMaterial.RawMaterialCaption.Id" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group">
+                    <label asp-for="RawMaterial.Purchase.Caption" class="control-label"></label>
+                    @Html.DropDownListFor(
+                        model => model.purchase.SelectedItem,
+                        Model.purchase.Collection
+                    )
+                    <span asp-validation-for="RawMaterial.Purchase.Id" class="text-danger"></span>
+                </div>
+                <br />
+                <label asp-for="RawMaterial.Price" class="control-label"></label>
+                <input asp-for="RawMaterial.Price" class="form-control" />
+                <span asp-validation-for="RawMaterial.Price" class="text-danger"></span>
+            </div>
+            <br />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RawMaterial.Quantity" class="control-label"></label>
+                <input asp-for="RawMaterial.Quantity" class="form-control" />
+                <span asp-validation-for="RawMaterial.Quantity" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="RawMaterial.MeasureOfMeasurement" class="control-label"></label>
+                @Html.DropDownListFor(
+                    model => model.measureOfMeasurement.SelectedItem,
+                    Model.measureOfMeasurement.Collection
+                )
+                <span asp-validation-for="RawMaterial.MeasureOfMeasurement.Id" class="text-danger"></span>
+            </div>
+            <br />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RawMaterial.LinkSource" class="control-label"></label>
+                <input asp-for="RawMaterial.LinkSource" class="form-control" />
+                <span asp-validation-for="RawMaterial.LinkSource" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Index">Назад</a>
+</div>

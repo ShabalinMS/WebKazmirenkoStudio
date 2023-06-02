@@ -1,0 +1,35 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.ProductInOrder.DetailsModel
+@using WebKazmirenkoStudio.Properties.Resources
+
+@{
+    ViewData["Title"] = ResourcesString.ProductInOrder;
+    ViewData["DetailsLableCaption"] = ElementPageResource.DetailsLableCaption;
+    ViewData["EditButton"] = ElementPageResource.EditButton;
+    ViewData["BackCaption"] = ElementPageResource.BackCaption;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>@ViewData["DetailsLableCaption"]</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductInOrderModel.Product)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductInOrderModel.Product.Caption)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductInOrderModel.Order)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProductInOrderModel.Order.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ProductInOrderModel?.Id">@ViewData["EditButton"]</a> |
+    <a asp-page="./Index">@ViewData["BackCaption"]</a>
+</div>

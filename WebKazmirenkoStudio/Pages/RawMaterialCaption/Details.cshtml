@@ -1,0 +1,22 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div>
+    <h4>Название материала</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RawMaterialCaptionModel.Caption)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RawMaterialCaptionModel.Caption)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.RawMaterialCaptionModel?.Id">Изменить</a> |
+    <a asp-page="./Index">Назад</a>
+</div>

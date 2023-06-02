@@ -1,0 +1,47 @@
+﻿@page
+@model WebKazmirenkoStudio.Pages.Shop.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Новая запись</h1>
+
+<h4>Магазины</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ShopModel.Caption" class="control-label"></label>
+                <input asp-for="ShopModel.Caption" class="form-control" />
+                <span asp-validation-for="ShopModel.Caption" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ShopModel.Address" class="control-label"></label>
+                <input asp-for="ShopModel.Address" class="form-control" />
+                <span asp-validation-for="ShopModel.Address" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="ShopModel.LinkSource" class="control-label"></label>
+                <input asp-for="ShopModel.LinkSource" class="form-control" />
+                <span asp-validation-for="ShopModel.LinkSource" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="Index">Назад</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

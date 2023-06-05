@@ -19,7 +19,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
             _context = context;
         }
 
-        public IList<WebKazmirenkoStudio.Model.RawMaterial> RawMaterial { get;set; } = default!;
+        public IList<RawMaterialModel> RawMaterial { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

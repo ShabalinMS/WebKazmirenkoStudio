@@ -42,7 +42,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
         /// Основная модель
         /// </summary>
         [BindProperty]
-        public WebKazmirenkoStudio.Model.RawMaterial RawMaterial { get; set; } = default!;
+        public RawMaterialModel RawMaterial { get; set; } = default!;
 
         #endregion
 

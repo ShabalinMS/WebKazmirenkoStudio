@@ -20,7 +20,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
         }
 
         [BindProperty]
-      public WebKazmirenkoStudio.Model.RawMaterial RawMaterial { get; set; } = default!;
+      public WebKazmirenkoStudio.Model.RawMaterialModel RawMaterial { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(Guid? id)
         {

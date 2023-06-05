@@ -43,7 +43,7 @@ namespace WebKazmirenkoStudio.Data
         /// <summary>
         /// Источник данных сырье
         /// </summary>
-        public DbSet<WebKazmirenkoStudio.Model.RawMaterial> RawMaterial { get; set; } = default!;
+        public DbSet<WebKazmirenkoStudio.Model.RawMaterialModel> RawMaterial { get; set; } = default!;
 
         /// <summary>
         /// Источник данных магазин

@@ -49,7 +49,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
         /// Коллекция сырья
         /// </summary>
         [BindProperty]
-        public WebKazmirenkoStudio.Model.RawMaterial RawMaterial { get; set; } = default!;
+        public RawMaterialModel RawMaterial { get; set; } = default!;
 
         /// <summary>
         /// Получить запись
@@ -147,7 +147,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
         /// <summary>
         /// Получить список наименований сырья
         /// </summary>
-        private async Task SetRawMaterialCaptionList(WebKazmirenkoStudio.Model.RawMaterial rawmaterial)
+        private async Task SetRawMaterialCaptionList(RawMaterialModel rawmaterial)
         {
             rawMaterialCaption = new DropdownViewModel();
             List<SelectListItem> list = new List<SelectListItem>();
@@ -164,7 +164,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
         /// Установка коллекции меры измерений
         /// </summary>
         /// <returns></returns>
-        private async Task SetMeasureOfMeasurementList(WebKazmirenkoStudio.Model.RawMaterial rawmaterial)
+        private async Task SetMeasureOfMeasurementList(RawMaterialModel rawmaterial)
         {
             measureOfMeasurement = new DropdownViewModel();
             List<SelectListItem> list = new List<SelectListItem>();
@@ -181,7 +181,7 @@ namespace WebKazmirenkoStudio.Pages.RawMaterial
         /// Установить коллекция записей закупок
         /// </summary>
         /// <returns></returns>
-        private async Task SetPurchaseList(WebKazmirenkoStudio.Model.RawMaterial rawmaterial)
+        private async Task SetPurchaseList(RawMaterialModel rawmaterial)
         {
             purchase = new DropdownViewModel();
             List<SelectListItem> list = new List<SelectListItem>();

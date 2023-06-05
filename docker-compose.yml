@@ -5,5 +5,4 @@ services:
     image: ${DOCKER_REGISTRY-}webkazmirenkostudio
     build:
       context: .
-      dockerfile: WebKazmirenkoStudio\Dockerfile
-     
+      dockerfile: Dockerfile

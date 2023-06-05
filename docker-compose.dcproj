@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>fc19f13f-812e-4f06-badb-a31cf1e38709</ProjectGuid>
+    <ProjectGuid>86a44bda-dc6d-41e1-9cf8-172669d333bd</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://{ServiceIPAddress}{ServicePort}</DockerServiceUrl>
     <DockerServiceName>webkazmirenkostudio</DockerServiceName>

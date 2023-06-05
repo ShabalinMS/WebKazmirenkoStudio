@@ -1,12 +1,17 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using WebKazmirenkoStudio.Model.Base;
+using WebKazmirenkoStudio.Model.Product;
+using WebKazmirenkoStudio.Model.RawMaterial;
 
 namespace WebKazmirenkoStudio.Model
 {
     /// <summary>
     /// Модель данных сырья
     /// </summary>
-    public class RawMaterial: BaseEntity
+    public class RawMaterialModel: BaseEntity
     {
         /// <summary>
         /// Закупка
@@ -44,5 +49,12 @@ namespace WebKazmirenkoStudio.Model
         /// </summary>
         [DisplayName(displayName: "Ссылка на источник")]
         public string? LinkSource { get; set; }
+
+        /// <summary>
+        /// Стоимость доставки за штуку
+        /// </summary>
+        [Display(Name = "ShippingCostPerPiece", ResourceType = typeof(RawMaterialResource))]
+        [Column(TypeName = "decimal(10, 2)")]
+        public float ShippingCostPerPiece { get; set; }
     }
 }
